@@ -6,6 +6,7 @@ Zhu, X., D. Zhang, (2013) Efficient parallel Levenberg-Marquardt model fitting t
 
 # How to use?
 Please refer to the PDF manual in the folder "Docs".
+The source code is in the folder "GPU_LMfit".
 
 # License
 Please refer to the GPU-LMFit header file GPU_LMFit.cuh.
