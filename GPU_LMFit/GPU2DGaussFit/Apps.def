@@ -1,0 +1,6 @@
+; Output file extension is not .dll, so the below code
+;   should comment out the LIBRARY Name, otherwise the linker
+;   will give warning. 
+
+LIBRARY ;Apps
+EXPORTS mexFunction

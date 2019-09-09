@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release_Single|Win32">
+      <Configuration>Release_Single</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Single|x64">
+      <Configuration>Release_Single</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{17A2C3BD-475A-424E-8B73-4A3BF45C960D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>GPU2DGaussFit</RootNamespace>
+    <CudaToolkitCustomDir>$(CUDA_PATH)</CudaToolkitCustomDir>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>GPU2DGaussFit</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Single|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Single|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 8.0.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_Single|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_Single|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Single|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetExt>.mexw32</TargetExt>
+    <OutDir>$(SolutionDir)\..\Test\$(ProjectName)\</OutDir>
+    <TargetName>$(ProjectName)_RS</TargetName>
+    <IntDir>$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetExt>.mexw32</TargetExt>
+    <OutDir>$(SolutionDir)\..\Test\$(ProjectName)\</OutDir>
+    <TargetName>$(ProjectName)_RD</TargetName>
+    <IntDir>$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Single|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetExt>.mexw64</TargetExt>
+    <OutDir>$(SolutionDir)\..\Test\$(ProjectName)\</OutDir>
+    <TargetName>$(ProjectName)_RS</TargetName>
+    <IntDir>$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetExt>.mexw64</TargetExt>
+    <OutDir>$(SolutionDir)\..\Test\$(ProjectName)\</OutDir>
+    <TargetName>$(ProjectName)_RD</TargetName>
+    <IntDir>$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Single|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;GPU2DGAUSSFIT_EXPORTS;MATLAB_MEX_FILE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\GPU-LMFit\include\;C:\Program Files %28x86%29\MATLAB\R2011b\extern\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\Bin\GPU_LMFit\Lib\$(Platform)\;C:\Program Files %28x86%29\MATLAB\R2014a\extern\lib\win32\microsoft;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libmx.lib;libmex.lib;libmat.lib;cudart_static.lib;GPU_LMFit_$(Platform)_$(Configuration).lib</AdditionalDependencies>
+      <ModuleDefinitionFile>Apps.def</ModuleDefinitionFile>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+    <CudaCompile>
+      <CodeGeneration>compute_20,sm_20;compute_30,sm_30;compute_35,sm_35;compute_37,sm_37;compute_50,sm_50;compute_52,sm_52;compute_61,sm_61</CodeGeneration>
+      <Include>$(SolutionDir)..\Bin\GPU_LMFit\include;C:\Program Files %28x86%29\MATLAB\R2014a\extern\include;%(Include)</Include>
+      <GenerateRelocatableDeviceCode>true</GenerateRelocatableDeviceCode>
+      <Runtime>MT</Runtime>
+      <Warning>W4</Warning>
+      <AdditionalOptions>-ftz=true -prec-div=false -prec-sqrt=false %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>O2</Optimization>
+      <Defines>_SINGLE_FLOAT_</Defines>
+    </CudaCompile>
+    <CudaLink>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\..\GPU-LMFit\Lib\$(Platform)\</AdditionalLibraryDirectories>
+    </CudaLink>
+    <CudaLink>
+      <AdditionalDependencies>GPU_LMFit_$(Platform)_$(Configuration).lib</AdditionalDependencies>
+    </CudaLink>
+    <PostBuildEvent>
+      <Command>del "$(SolutionDir)\..\Test\$(ProjectName)\$(TargetName).exp" /Q
+del "$(SolutionDir)\..\Test\$(ProjectName)\$(TargetName).lib" /Q
+</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>... delete *.exp and *.lib files ...</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;GPU2DGAUSSFIT_EXPORTS;MATLAB_MEX_FILE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\GPU-LMFit\include\;C:\Program Files %28x86%29\MATLAB\R2011b\extern\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\Bin\GPU_LMFit\Lib\$(Platform)\;C:\Program Files %28x86%29\MATLAB\R2014a\extern\lib\win32\microsoft;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libmx.lib;libmex.lib;libmat.lib;cudart_static.lib;GPU_LMFit_$(Platform)_$(Configuration).lib</AdditionalDependencies>
+      <ModuleDefinitionFile>Apps.def</ModuleDefinitionFile>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+    <CudaCompile>
+      <CodeGeneration>compute_20,sm_20;compute_30,sm_30;compute_35,sm_35;compute_37,sm_37;compute_50,sm_50;compute_52,sm_52;compute_61,sm_61</CodeGeneration>
+      <Include>$(SolutionDir)..\Bin\GPU_LMFit\include;C:\Program Files %28x86%29\MATLAB\R2014a\extern\include;%(Include)</Include>
+      <GenerateRelocatableDeviceCode>true</GenerateRelocatableDeviceCode>
+      <Runtime>MT</Runtime>
+      <Warning>W4</Warning>
+      <AdditionalOptions>-ftz=true -prec-div=false -prec-sqrt=false %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>O2</Optimization>
+      <Defines>
+      </Defines>
+    </CudaCompile>
+    <CudaLink>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\..\GPU-LMFit\Lib\$(Platform)\</AdditionalLibraryDirectories>
+    </CudaLink>
+    <CudaLink>
+      <AdditionalDependencies>GPU_LMFit_$(Platform)_$(Configuration).lib</AdditionalDependencies>
+    </CudaLink>
+    <PostBuildEvent>
+      <Command>del "$(SolutionDir)\..\Test\$(ProjectName)\$(TargetName).exp" /Q
+del "$(SolutionDir)\..\Test\$(ProjectName)\$(TargetName).lib" /Q</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>... delete *.exp and *.lib files ...</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Single|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;GPU2DGAUSSFIT_EXPORTS;MATLAB_MEX_FILE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\GPU-LMFit\include\;C:\Program Files %28x86%29\MATLAB\R2011b\extern\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\Bin\GPU_LMFit\Lib\$(Platform)\;C:\Program Files\MATLAB\R2016a\extern\lib\win64\microsoft;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libmx.lib;libmex.lib;libmat.lib;cudart_static.lib;GPU_LMFit_$(Platform)_$(Configuration).lib</AdditionalDependencies>
+      <ModuleDefinitionFile>Apps.def</ModuleDefinitionFile>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+    <CudaCompile>
+      <CodeGeneration>compute_20,sm_20;compute_30,sm_30;compute_35,sm_35;compute_37,sm_37;compute_50,sm_50;compute_52,sm_52;compute_61,sm_61</CodeGeneration>
+      <Include>$(SolutionDir)..\Bin\GPU_LMFit\include;C:\Program Files\MATLAB\R2016a\extern\include;%(Include)</Include>
+      <GenerateRelocatableDeviceCode>true</GenerateRelocatableDeviceCode>
+      <Runtime>MT</Runtime>
+      <Warning>W4</Warning>
+      <AdditionalOptions>-ftz=true -prec-div=false -prec-sqrt=false %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>O2</Optimization>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <Defines>_SINGLE_FLOAT_</Defines>
+    </CudaCompile>
+    <CudaLink>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\..\GPU-LMFit\Lib\$(Platform)\</AdditionalLibraryDirectories>
+    </CudaLink>
+    <CudaLink>
+      <AdditionalDependencies>GPU_LMFit_$(Platform)_$(Configuration).lib</AdditionalDependencies>
+    </CudaLink>
+    <PostBuildEvent>
+      <Command>del "$(SolutionDir)\..\Test\$(ProjectName)\$(TargetName).exp" /Q
+del "$(SolutionDir)\..\Test\$(ProjectName)\$(TargetName).lib" /Q
+</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>... delete *.exp and *.lib files ...</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;GPU2DGAUSSFIT_EXPORTS;MATLAB_MEX_FILE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\GPU-LMFit\include\;C:\Program Files %28x86%29\MATLAB\R2011b\extern\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\Bin\GPU_LMFit\Lib\$(Platform)\;C:\Program Files\MATLAB\R2016a\extern\lib\win64\microsoft;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libmx.lib;libmex.lib;libmat.lib;cudart_static.lib;GPU_LMFit_$(Platform)_$(Configuration).lib</AdditionalDependencies>
+      <ModuleDefinitionFile>Apps.def</ModuleDefinitionFile>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+    <CudaCompile>
+      <CodeGeneration>compute_20,sm_20;compute_30,sm_30;compute_35,sm_35;compute_37,sm_37;compute_50,sm_50;compute_52,sm_52;compute_61,sm_61</CodeGeneration>
+      <Include>$(SolutionDir)..\Bin\GPU_LMFit\include;C:\Program Files\MATLAB\R2016a\extern\include;%(Include)</Include>
+      <GenerateRelocatableDeviceCode>true</GenerateRelocatableDeviceCode>
+      <Runtime>MT</Runtime>
+      <Warning>W4</Warning>
+      <AdditionalOptions>-ftz=true -prec-div=false -prec-sqrt=false %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>O2</Optimization>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+    </CudaCompile>
+    <CudaLink>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\..\GPU-LMFit\Lib\$(Platform)\</AdditionalLibraryDirectories>
+    </CudaLink>
+    <CudaLink>
+      <AdditionalDependencies>GPU_LMFit_$(Platform)_$(Configuration).lib</AdditionalDependencies>
+    </CudaLink>
+    <PostBuildEvent>
+      <Command>del "$(SolutionDir)\..\Test\$(ProjectName)\$(TargetName).exp" /Q
+del "$(SolutionDir)\..\Test\$(ProjectName)\$(TargetName).lib" /Q</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>... delete *.exp and *.lib files ...</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="Apps.cuh" />
+    <None Include="Apps.def" />
+    <None Include="GPU_2DGauss_FitFunctions.cuh" />
+    <None Include="GPU_2DGauss_Solver.cuh" />
+    <None Include="GPU_Commons.cuh" />
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="Apps.cu" />
+    <CudaCompile Include="GPU_2DGauss_FitFunctions.cu" />
+    <CudaCompile Include="GPU_2DGauss_Solver.cu" />
+    <CudaCompile Include="GPU_Commons.cu" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 8.0.targets" />
+  </ImportGroup>
+</Project>
